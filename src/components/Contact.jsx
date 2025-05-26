@@ -25,9 +25,9 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: FaGithub, url: 'https://github.com/yourusername' },
-    { icon: FaLinkedin, url: 'https://linkedin.com/in/yourusername' },
-    { icon: FaTwitter, url: 'https://twitter.com/yourusername' },
+    { icon: FaGithub, url: 'https://github.com/Nikitaverma309' },
+    { icon: FaLinkedin, url: 'https://linkedin.com/in/nikita-verma-3h13097' },
+    { icon: FaTwitter, url: 'https://x.com/Nikii309' },
   ];
 
   return (
@@ -83,7 +83,7 @@ const Contact = () => {
               <Box sx={{ mb: 4 }}>
                 <Button
                   startIcon={<EmailIcon />}
-                  href="mailto:your.email@example.com"
+                  href="nv989484@gmail.com"
                   sx={{
                     color: 'primary.main',
                     '&:hover': {
@@ -91,7 +91,7 @@ const Contact = () => {
                     },
                   }}
                 >
-                  your.email@example.com
+                 nv989484@gmail.com
                 </Button>
               </Box>
               <Box sx={{ display: 'flex', gap: 2 }}>

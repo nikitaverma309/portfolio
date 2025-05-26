@@ -16,8 +16,9 @@ const Hero = () => {
       <Container maxWidth="lg">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          viewport={{ once: false }}
         >
           <Typography
             variant="h6"
@@ -26,6 +27,13 @@ const Hero = () => {
           >
             Hi, my name is
           </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: false }}
+        >
           <Typography
             variant="h2"
             sx={{
@@ -36,6 +44,13 @@ const Hero = () => {
           >
             Nikita Verma
           </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: false }}
+        >
           <Typography
             variant="h3"
             sx={{
@@ -45,6 +60,13 @@ const Hero = () => {
           >
             I build things for the web.
           </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          viewport={{ once: false }}
+        >
           <Typography
             variant="body1"
             sx={{
@@ -56,30 +78,30 @@ const Hero = () => {
             I'm a software developer specializing in building exceptional digital experiences.
             Currently, I'm focused on building accessible, human-centered products.
           </Typography>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Box
+            component="a"
+            href="#contact"
+            sx={{
+              display: 'inline-block',
+              px: 4,
+              py: 2,
+              border: '1px solid',
+              borderColor: 'primary.main',
+              color: 'primary.main',
+              textDecoration: 'none',
+              borderRadius: 1,
+              '&:hover': {
+                bgcolor: 'rgba(100, 255, 218, 0.1)',
+              },
+            }}
           >
-            <Box
-              component="a"
-              href="#contact"
-              sx={{
-                display: 'inline-block',
-                px: 4,
-                py: 2,
-                border: '1px solid',
-                borderColor: 'primary.main',
-                color: 'primary.main',
-                textDecoration: 'none',
-                borderRadius: 1,
-                '&:hover': {
-                  bgcolor: 'rgba(100, 255, 218, 0.1)',
-                },
-              }}
-            >
-              Get In Touch
-            </Box>
-          </motion.div>
+            Get In Touch
+          </Box>
         </motion.div>
       </Container>
     </Box>
