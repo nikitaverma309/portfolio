@@ -112,7 +112,7 @@ const Contact = () => {
                 ))}
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
+            {/* <Grid item xs={12} md={6}>
               <Box
                 component="form"
                 onSubmit={handleSubmit}
@@ -158,8 +158,11 @@ const Contact = () => {
                 <Button
                   type="submit"
                   variant="contained"
+                  onClick={() => {
+                    window.location.href = `mailto:nv989484@gmail.com?subject=Contact from Portfolio&body=${formData.message}`;
+                  }}
                   sx={{
-                    bgcolor: 'primary.main',
+                    bgcolor: 'primary.main', 
                     color: 'background.default',
                     '&:hover': {
                       bgcolor: 'primary.dark',
@@ -169,7 +172,7 @@ const Contact = () => {
                   Send Message
                 </Button>
               </Box>
-            </Grid>
+            </Grid> */}
           </Grid>
         </motion.div>
       </Container>

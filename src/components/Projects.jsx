@@ -3,12 +3,22 @@ import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, CardAct
 import { motion } from 'framer-motion';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
-
+import bbk from '../assets/bbk.webp';
+import cgBudget from '../assets/cgBudget.webp'; 
+import fixq from '../assets/fixq.webp';
+import logo from '../assets/logo.png';
+//                 mx: 'auto',
 const projects = [
   {
     title: 'HE HRIMS',
     description: 'Developed a mobile-based Face Attendance System for the Higher Education Department. The app uses real-time face recognition and location verification to mark employee attendance across all colleges. Ensures secure, accurate, and paperless attendance accessible online by authorized institutions.',
-    image: '/he-hrims.jpg',
+    image: logo,
+    imageStyle: {
+      width: '100%', // Changed to 100% width
+      height: '150', // Increased height
+      objectFit: 'contain', // Changed to contain to show full image
+      margin: '15px 0' // Added margin for spacing
+    },
     technologies: ['Flutter', 'Dart', 'Face Recognition', 'Location Services'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://heonline.cg.nic.in/',
@@ -16,7 +26,8 @@ const projects = [
   {
     title: 'Chhattisgarh Budget',
     description: 'Official app of the Finance Department, Govt. of Chhattisgarh, providing public access to budget documents in a user-friendly format.',
-    image: '/cg-budget.jpg',
+    image: cgBudget,
+   
     technologies: ['Flutter', 'Dart', 'PDF Viewer', 'State Management'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://play.google.com/store/apps/details?id=com.cgbudget&hl=en_IN&pli=1',
@@ -24,7 +35,8 @@ const projects = [
   {
     title: 'Blue birds Kindergarten',
     description: 'An interactive and innovative school management software with features like live classroom streaming, student attendance, fees management, curriculum tracking, and notifications.',
-    image: '/blue-birds.jpg',
+    image: bbk,
+  
     technologies: ['Flutter', 'Dart', 'Real-time Streaming', 'Payment Integration'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://play.google.com/store/apps/details?id=com.fixingdots.htkc.bbk_parent',
@@ -32,7 +44,8 @@ const projects = [
   {
     title: 'Fixq',
     description: 'An online marketplace connecting automobile parts with potential customers. A modern and advanced HeadStart solution for business growth and revenue targets.',
-    image: '/fixq.jpg',
+    image: fixq,
+   
     technologies: ['Flutter', 'Dart', 'API Integration', 'Payment Gateway'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://play.google.com/store/apps/details?id=com.fixingdots.htkc.fixq&hl=en_IN',
@@ -95,12 +108,26 @@ const Projects = () => {
                       },
                     }}
                   >
-                    <CardMedia
-                      component="img"
-                      height="200"
-                      image={project.image}
-                      alt={project.title}
-                    />
+                    <Box
+                      sx={{
+                        width: '200px',
+                        height: '200px',
+                        margin: '20px auto',
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                      }}
+                    >
+                      <CardMedia
+                        component="img"
+                        sx={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                        }}
+                        image={project.image}
+                        alt={project.title}
+                      />
+                    </Box>
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography
                         gutterBottom

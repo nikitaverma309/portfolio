@@ -136,14 +136,14 @@ const About = () => {
               >
                 Email: nv989484@gmail.com
               </Typography>
-              <Typography
+              {/* <Typography
                 variant="body1"
                 sx={{
                   color: 'text.secondary',
                 }}
               >
                 Phone: (+91) 7987715149
-              </Typography>
+              </Typography> */}
             </Grid>
             <Grid item xs={12} md={6}>
               <Box
