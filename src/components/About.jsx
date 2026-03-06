@@ -147,9 +147,6 @@ const About = () => {
               >
                 Email: nikita305verma@gmail.com
               </Typography>
-              <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                Phone: (+91) 7440735124
-              </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box

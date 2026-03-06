@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Container, Typography, TextField, Button, Grid, IconButton, Paper, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
@@ -30,7 +30,6 @@ const Contact = () => {
   const socialLinks = [
     { icon: FaGithub, url: 'https://github.com/Nikitaverma309' },
     { icon: FaLinkedin, url: 'https://linkedin.com/in/nikita-verma-3h13097' },
-    { icon: FaWhatsapp, url: 'https://wa.me/917440735124' },
   ];
 
   return (
@@ -79,7 +78,7 @@ const Contact = () => {
                 variant="body1"
                 sx={{ mb: 4, color: 'text.secondary' }}
               >
-                I’m open to mobile app, Flutter, React, and government or enterprise product opportunities. If you want to discuss a project, collaboration, or job role, send me a message here.
+                I’m open to mobile app, Flutter, React, and government or enterprise product opportunities. If you want to discuss a project, collaboration, or job role, send me a message here or connect over email.
               </Typography>
               <Stack spacing={2} sx={{ mb: 4 }}>
                 <Paper elevation={0} sx={{ p: 2, bgcolor: 'background.paper', borderRadius: 2 }}>
@@ -88,8 +87,8 @@ const Contact = () => {
                   </Button>
                 </Paper>
                 <Paper elevation={0} sx={{ p: 2, bgcolor: 'background.paper', borderRadius: 2 }}>
-                  <Button href="https://wa.me/917440735124" target="_blank" sx={{ color: 'primary.main' }}>
-                    WhatsApp: (+91) 7440735124
+                  <Button href="https://linkedin.com/in/nikita-verma-3h13097" target="_blank" sx={{ color: 'primary.main', textTransform: 'none' }}>
+                    LinkedIn: linkedin.com/in/nikita-verma-3h13097
                   </Button>
                 </Paper>
               </Stack>
