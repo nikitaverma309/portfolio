@@ -10,43 +10,34 @@ import logo from '../assets/logo.png';
 //                 mx: 'auto',
 const projects = [
   {
-    title: 'HE HRIMS',
-    description: 'Developed a mobile-based Face Attendance System for the Higher Education Department. The app uses real-time face recognition and location verification to mark employee attendance across all colleges. Ensures secure, accurate, and paperless attendance accessible online by authorized institutions.',
+    title: 'HRMIS – Government of Chhattisgarh',
+    description: 'Designed and developed a government-grade Human Resource Management Information System for state colleges featuring face recognition-based attendance, geo-location verification, multi-level role-based access, and centralized real-time monitoring dashboards.',
     image: logo,
-    imageStyle: {
-      width: '100%', // Changed to 100% width
-      height: '150', // Increased height
-      objectFit: 'contain', // Changed to contain to show full image
-      margin: '15px 0' // Added margin for spacing
-    },
-    technologies: ['Flutter', 'Dart', 'Face Recognition', 'Location Services'],
+    technologies: ['Flutter', 'REST APIs', 'Face Recognition', 'Geo-location', 'RBAC'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://heonline.cg.nic.in/',
   },
   {
-    title: 'Chhattisgarh Budget',
-    description: 'Official app of the Finance Department, Govt. of Chhattisgarh, providing public access to budget documents in a user-friendly format.',
+    title: 'Chhattisgarh Budget App',
+    description: 'Built and deployed the official Finance Department application enabling access to 10,000+ government budget documents with advanced search, filtering, and multilingual support.',
     image: cgBudget,
-   
-    technologies: ['Flutter', 'Dart', 'PDF Viewer', 'State Management'],
+    technologies: ['Flutter', 'Document Search', 'Multilingual Support', 'State Management'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://play.google.com/store/apps/details?id=com.cgbudget&hl=en_IN&pli=1',
   },
   {
-    title: 'Blue birds Kindergarten',
-    description: 'An interactive and innovative school management software with features like live classroom streaming, student attendance, fees management, curriculum tracking, and notifications.',
+    title: 'Blue Birds Kindergarten Management System',
+    description: 'Developed a comprehensive school management app with live classroom streaming, attendance tracking, fee management, parent notifications, and multimedia content sharing using Flutter and Firebase.',
     image: bbk,
-  
-    technologies: ['Flutter', 'Dart', 'Real-time Streaming', 'Payment Integration'],
+    technologies: ['Flutter', 'Firebase', 'Live Streaming', 'Notifications'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://play.google.com/store/apps/details?id=com.fixingdots.htkc.bbk_parent',
   },
   {
-    title: 'Fixq',
-    description: 'An online marketplace connecting automobile parts with potential customers. A modern and advanced HeadStart solution for business growth and revenue targets.',
+    title: 'FixQ Marketplace',
+    description: 'Engineered a cross-platform auto-parts marketplace application with product catalog, vendor panel, shopping cart, order tracking, and secure payment integration via RESTful APIs.',
     image: fixq,
-   
-    technologies: ['Flutter', 'Dart', 'API Integration', 'Payment Gateway'],
+    technologies: ['Flutter', 'Marketplace', 'REST APIs', 'Payment Integration'],
     github: 'https://github.com/Nikitaverma309',
     live: 'https://play.google.com/store/apps/details?id=com.fixingdots.htkc.fixq&hl=en_IN',
   },
@@ -166,7 +157,7 @@ const Projects = () => {
                         target="_blank"
                         sx={{ color: 'primary.main' }}
                       >
-                        Code
+                        GitHub
                       </Button>
                       <Button
                         size="small"
@@ -175,7 +166,7 @@ const Projects = () => {
                         target="_blank"
                         sx={{ color: 'primary.main' }}
                       >
-                        Live Demo
+                        View Project
                       </Button>
                     </CardActions>
                   </Card>

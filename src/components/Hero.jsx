@@ -1,7 +1,9 @@
 import React from 'react';
-import { Box, Typography, Container, Grid } from '@mui/material';
+import { Box, Typography, Container, Grid, Stack, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import nikiLogo from '../assets/nikiLogo.png';
+
+const highlights = ['Flutter', 'React.js', 'Government Projects', '5000+ Users'];
 
 const Hero = () => {
   return (
@@ -63,7 +65,7 @@ const Hero = () => {
                   color: 'text.secondary',
                 }}
               >
-                I build amazing mobile apps with Flutter
+                Mobile Application Engineer — Flutter & React Developer
               </Typography>
             </motion.div>
             <motion.div
@@ -78,12 +80,17 @@ const Hero = () => {
                   maxWidth: '600px',
                   mb: 4,
                   color: 'text.secondary',
+                  lineHeight: 1.9,
                 }}
               >
-                I'm a Flutter developer specializing in building exceptional mobile applications.
-                Currently, I'm focused on creating seamless, user-friendly cross-platform experiences at NIC Raipur.
+                Full-stack Mobile Application Engineer with 4+ years of experience building scalable government and enterprise-grade applications using Flutter, React.js, Node.js, and REST APIs. I build secure, high-performance digital products with expertise in face recognition, geo-location tracking, analytics, and role-based systems.
               </Typography>
             </motion.div>
+            <Stack direction="row" spacing={1.5} sx={{ flexWrap: 'wrap', mb: 4 }}>
+              {highlights.map((item) => (
+                <Chip key={item} label={item} sx={{ bgcolor: 'rgba(100, 255, 218, 0.1)', color: 'primary.main', border: '1px solid rgba(100, 255, 218, 0.3)' }} />
+              ))}
+            </Stack>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -105,7 +112,7 @@ const Hero = () => {
                   },
                 }}
               >
-                Get In Touch
+                Hire Me / Contact Me
               </Box>
             </motion.div>
           </Grid>

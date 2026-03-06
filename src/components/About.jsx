@@ -1,8 +1,15 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Link } from '@mui/material';
+import { Box, Container, Typography, Grid, Link, Paper, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import profile from '../assets/profile_nikita.jpeg'; // Ensure this path is correct
+import profile from '../assets/profile_nikita.jpeg';
+
+const profileStats = [
+  { label: 'Experience', value: '4+ Years' },
+  { label: 'Active Users Served', value: '5000+' },
+  { label: 'API Optimization', value: '20%' },
+  { label: 'Crash Reduction', value: '15%' },
+];
 
 const About = () => {
   return (
@@ -68,7 +75,7 @@ const About = () => {
                     mb: 3,
                   }}
                 >
-                  Senior Flutter Developer
+                  Mobile Application Engineer — Flutter & React Developer
                 </Typography>
               </motion.div>
               <motion.div
@@ -85,9 +92,7 @@ const About = () => {
                     lineHeight: 1.8,
                   }}
                 >
-                  I am a Senior Flutter Developer with 3+ years of experience in mobile app development. 
-                  Currently working at National Informatics Centre, Raipur (C.G.), I specialize in developing 
-                  scalable, cross-platform applications using Flutter and Dart.
+                  I currently work at National Informatics Centre (NIC), Raipur, where I lead mobile development initiatives for government platforms. My work focuses on building secure, scalable, and user-friendly digital systems for public institutions.
                 </Typography>
               </motion.div>
               <motion.div
@@ -104,14 +109,20 @@ const About = () => {
                     lineHeight: 1.8,
                   }}
                 >
-                  My expertise includes developing real-time face recognition systems, location-based services, 
-                  and complex mobile applications. I have successfully delivered projects for government departments 
-                  and private organizations, ensuring high performance and user satisfaction.
+                  My expertise includes cross-platform mobile development, face recognition attendance systems, geo-location services, Firebase analytics, crash monitoring, role-based access workflows, and performance optimization for large-scale production apps.
                 </Typography>
               </motion.div>
+              <Stack spacing={2} sx={{ mb: 3 }}>
+                {profileStats.map((stat) => (
+                  <Paper key={stat.label} elevation={0} sx={{ p: 2, bgcolor: 'background.default', border: '1px solid rgba(100,255,218,0.12)' }}>
+                    <Typography variant="subtitle2" sx={{ color: 'primary.main' }}>{stat.label}</Typography>
+                    <Typography variant="body1" sx={{ color: 'text.primary', fontWeight: 600 }}>{stat.value}</Typography>
+                  </Paper>
+                ))}
+              </Stack>
               <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
                 <Link
-                  href="https://verma-34a97a227"
+                  href="https://linkedin.com/in/nikita-verma-3h13097"
                   target="_blank"
                   rel="noopener noreferrer"
                   sx={{ color: 'primary.main' }}
@@ -134,16 +145,11 @@ const About = () => {
                   mb: 1,
                 }}
               >
-                Email: nv989484@gmail.com
+                Email: nikita305verma@gmail.com
               </Typography>
-              {/* <Typography
-                variant="body1"
-                sx={{
-                  color: 'text.secondary',
-                }}
-              >
-                Phone: (+91) 7987715149
-              </Typography> */}
+              <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                Phone: (+91) 7440735124
+              </Typography>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box

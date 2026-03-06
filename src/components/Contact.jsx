@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, TextField, Button, Grid, IconButton } from '@mui/material';
+import { Box, Container, Typography, TextField, Button, Grid, IconButton, Paper, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import EmailIcon from '@mui/icons-material/Email';
 
 const Contact = () => {
@@ -20,14 +20,17 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log(formData);
+    const subject = encodeURIComponent(`Portfolio inquiry from ${formData.name || 'Visitor'}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:nikita305verma@gmail.com?subject=${subject}&body=${body}`;
   };
 
   const socialLinks = [
     { icon: FaGithub, url: 'https://github.com/Nikitaverma309' },
     { icon: FaLinkedin, url: 'https://linkedin.com/in/nikita-verma-3h13097' },
-    { icon: FaTwitter, url: 'https://x.com/Nikii309' },
+    { icon: FaWhatsapp, url: 'https://wa.me/917440735124' },
   ];
 
   return (
@@ -76,24 +79,20 @@ const Contact = () => {
                 variant="body1"
                 sx={{ mb: 4, color: 'text.secondary' }}
               >
-                I'm currently looking for new opportunities. Whether you have a
-                question or just want to say hi, I'll try my best to get back to
-                you!
+                I’m open to mobile app, Flutter, React, and government or enterprise product opportunities. If you want to discuss a project, collaboration, or job role, send me a message here.
               </Typography>
-              <Box sx={{ mb: 4 }}>
-                <Button
-                  startIcon={<EmailIcon />}
-                  href="nv989484@gmail.com"
-                  sx={{
-                    color: 'primary.main',
-                    '&:hover': {
-                      bgcolor: 'rgba(100, 255, 218, 0.1)',
-                    },
-                  }}
-                >
-                 nv989484@gmail.com
-                </Button>
-              </Box>
+              <Stack spacing={2} sx={{ mb: 4 }}>
+                <Paper elevation={0} sx={{ p: 2, bgcolor: 'background.paper', borderRadius: 2 }}>
+                  <Button startIcon={<EmailIcon />} href="mailto:nikita305verma@gmail.com" sx={{ color: 'primary.main' }}>
+                    nikita305verma@gmail.com
+                  </Button>
+                </Paper>
+                <Paper elevation={0} sx={{ p: 2, bgcolor: 'background.paper', borderRadius: 2 }}>
+                  <Button href="https://wa.me/917440735124" target="_blank" sx={{ color: 'primary.main' }}>
+                    WhatsApp: (+91) 7440735124
+                  </Button>
+                </Paper>
+              </Stack>
               <Box sx={{ display: 'flex', gap: 2 }}>
                 {socialLinks.map((social) => (
                   <IconButton
@@ -112,7 +111,7 @@ const Contact = () => {
                 ))}
               </Box>
             </Grid>
-            {/* <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={6}>
               <Box
                 component="form"
                 onSubmit={handleSubmit}
@@ -158,11 +157,8 @@ const Contact = () => {
                 <Button
                   type="submit"
                   variant="contained"
-                  onClick={() => {
-                    window.location.href = `mailto:nv989484@gmail.com?subject=Contact from Portfolio&body=${formData.message}`;
-                  }}
                   sx={{
-                    bgcolor: 'primary.main', 
+                    bgcolor: 'primary.main',
                     color: 'background.default',
                     '&:hover': {
                       bgcolor: 'primary.dark',
@@ -172,7 +168,7 @@ const Contact = () => {
                   Send Message
                 </Button>
               </Box>
-            </Grid> */}
+            </Grid>
           </Grid>
         </motion.div>
       </Container>

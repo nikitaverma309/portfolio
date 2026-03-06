@@ -6,7 +6,9 @@ import { motion } from 'framer-motion';
 import {
   MdAndroid,
   MdCode,
+  MdSecurity,
   MdHtml,
+  MdInsights,
   MdStorage,
   MdDevices,
   MdOutlineJavascript,
@@ -16,18 +18,24 @@ import {
   MdCloud,
   MdLaptopMac,
   MdTerminal,
+  MdGpsFixed,
 } from 'react-icons/md';
 
 // Skill data with Material icons
 const skills = [
   { name: 'Dart', icon: MdDeveloperMode, level: 95 },
   { name: 'Flutter', icon: MdDevices, level: 95 },
-  { name: 'C#', icon: MdCode, level: 85 },
+  { name: 'React.js', icon: MdCode, level: 85 },
   { name: 'JavaScript', icon: MdOutlineJavascript, level: 80 },
   { name: 'Node.js', icon: MdBuild, level: 75 },
   { name: 'MySQL', icon: MdStorage, level: 80 },
   { name: 'MongoDB', icon: MdOutlineLeaderboard, level: 75 },
   { name: 'HTML/CSS', icon: MdHtml, level: 85 },
+  { name: 'Firebase', icon: MdCloud, level: 88 },
+  { name: 'REST APIs', icon: MdBuild, level: 90 },
+  { name: 'Geo-location', icon: MdGpsFixed, level: 85 },
+  { name: 'Secure Authentication', icon: MdSecurity, level: 85 },
+  { name: 'Crashlytics / Analytics', icon: MdInsights, level: 80 },
   { name: 'Git/GitHub', icon: MdCloud, level: 90 },
   { name: 'VS Code', icon: MdTerminal, level: 95 },
   { name: 'Android Studio', icon: MdAndroid, level: 90 },

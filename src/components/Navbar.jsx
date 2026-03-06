@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Button, Box, IconButton, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link } from 'react-scroll';
 
 const navItems = [
   { name: 'Home', to: 'hero' },
   { name: 'About', to: 'about' },
+  { name: 'Experience', to: 'experience' },
+  { name: 'Education', to: 'education' },
   { name: 'Skills', to: 'skills' },
   { name: 'Projects', to: 'projects' },
   { name: 'Contact', to: 'contact' },
