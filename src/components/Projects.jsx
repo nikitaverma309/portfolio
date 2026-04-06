@@ -48,8 +48,8 @@ const Projects = () => {
     <Box
       id="projects"
       sx={{
-        py: 8,
-        bgcolor: 'background.paper',
+        py: 12,
+        bgcolor: '#112240', // Slightly lighter navy for alternating section backgrounds
       }}
     >
       <Container maxWidth="lg">
@@ -62,29 +62,33 @@ const Projects = () => {
           <Typography
             variant="h2"
             sx={{
-              mb: 6,
+              mb: 8,
               color: 'text.primary',
               textAlign: 'center',
+              fontWeight: 800,
+              letterSpacing: 1.5,
               '&::after': {
                 content: '""',
                 display: 'block',
-                width: '60px',
+                width: '80px',
                 height: '4px',
                 bgcolor: 'primary.main',
                 mt: 2,
                 mx: 'auto',
+                borderRadius: 2,
+                boxShadow: '0 0 10px rgba(100, 255, 218, 0.5)',
               },
             }}
           >
-            Projects
+            Featured Projects
           </Typography>
-          <Grid container spacing={4}>
+          <Grid container spacing={5}>
             {projects.map((project, index) => (
               <Grid item xs={12} md={6} lg={4} key={project.title}>
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.6, delay: index * 0.15 }}
                   viewport={{ once: true }}
                 >
                   <Card
@@ -92,20 +96,40 @@ const Projects = () => {
                       height: '100%',
                       display: 'flex',
                       flexDirection: 'column',
-                      bgcolor: 'background.default',
-                      transition: 'transform 0.3s ease-in-out',
+                      bgcolor: 'rgba(10, 25, 47, 0.7)', // Deep navy card
+                      backdropFilter: 'blur(10px)',
+                      borderRadius: 4,
+                      border: '1px solid rgba(100, 255, 218, 0.1)',
+                      transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                      overflow: 'visible', // Allow image to pop out slightly
                       '&:hover': {
-                        transform: 'translateY(-5px)',
+                        transform: 'translateY(-12px)',
+                        boxShadow: '0 20px 40px -15px rgba(100, 255, 218, 0.3)',
+                        borderColor: 'rgba(100, 255, 218, 0.4)',
+                        '& .project-logo-container': {
+                          transform: 'scale(1.05) translateY(-5px)',
+                          boxShadow: '0 10px 25px rgba(100, 255, 218, 0.4)',
+                          borderColor: '#64ffda',
+                        },
+                        '& .project-title': {
+                          color: '#64ffda',
+                        }
                       },
                     }}
                   >
                     <Box
+                      className="project-logo-container"
                       sx={{
-                        width: '200px',
-                        height: '200px',
-                        margin: '20px auto',
+                        width: '180px',
+                        height: '180px',
+                        margin: '-30px auto 20px', // Pull it up slightly out of the card
                         borderRadius: '50%',
                         overflow: 'hidden',
+                        border: '3px solid rgba(100, 255, 218, 0.1)',
+                        bgcolor: '#fff',
+                        transition: 'all 0.4s ease',
+                        boxShadow: '0 5px 15px rgba(0,0,0,0.3)',
+                        zIndex: 2,
                       }}
                     >
                       <CardMedia
@@ -113,60 +137,95 @@ const Projects = () => {
                         sx={{
                           width: '100%',
                           height: '100%',
-                          objectFit: 'cover',
+                          objectFit: 'contain',
+                          p: 2, // Padding so logos don't get cut off by circle
                         }}
                         image={project.image}
                         alt={project.title}
                       />
                     </Box>
-                    <CardContent sx={{ flexGrow: 1 }}>
+                    <CardContent sx={{ flexGrow: 1, pt: 0, px: 4, pb: 2, textAlign: 'center' }}>
                       <Typography
+                        className="project-title"
                         gutterBottom
                         variant="h5"
-                        component="h2"
-                        sx={{ color: 'text.primary' }}
+                        component="h3"
+                        sx={{ 
+                          color: 'text.primary', 
+                          fontWeight: 'bold',
+                          transition: 'color 0.3s ease',
+                          mb: 2
+                        }}
                       >
                         {project.title}
                       </Typography>
                       <Typography
                         variant="body2"
                         color="text.secondary"
-                        sx={{ mb: 2 }}
+                        sx={{ 
+                          mb: 3, 
+                          lineHeight: 1.6,
+                          minHeight: '80px',
+                          textAlign: 'left' // Better readability for long descriptions
+                        }}
                       >
                         {project.description}
                       </Typography>
-                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, justifyContent: 'center' }}>
                         {project.technologies.map((tech) => (
                           <Chip
                             key={tech}
                             label={tech}
                             size="small"
                             sx={{
-                              bgcolor: 'background.paper',
+                              bgcolor: 'rgba(100, 255, 218, 0.05)',
                               color: 'primary.main',
+                              border: '1px solid rgba(100, 255, 218, 0.2)',
+                              fontFamily: 'monospace',
+                              fontWeight: 600,
+                              transition: 'all 0.2s',
+                              '&:hover': {
+                                bgcolor: 'rgba(100, 255, 218, 0.15)',
+                              }
                             }}
                           />
                         ))}
                       </Box>
                     </CardContent>
-                    <CardActions>
+                    <CardActions sx={{ justifyContent: 'center', pb: 3, gap: 2 }}>
                       <Button
-                        size="small"
+                        size="medium"
                         startIcon={<GitHubIcon />}
                         href={project.github}
                         target="_blank"
-                        sx={{ color: 'primary.main' }}
+                        sx={{ 
+                          color: 'text.secondary',
+                          textTransform: 'none',
+                          fontWeight: 'bold',
+                          '&:hover': {
+                            color: 'primary.main',
+                            bgcolor: 'rgba(100, 255, 218, 0.1)'
+                          }
+                        }}
                       >
-                        GitHub
+                        Code
                       </Button>
                       <Button
-                        size="small"
+                        size="medium"
                         startIcon={<LaunchIcon />}
                         href={project.live}
                         target="_blank"
-                        sx={{ color: 'primary.main' }}
+                        sx={{ 
+                          color: 'primary.main',
+                          textTransform: 'none',
+                          fontWeight: 'bold',
+                          borderBottom: '1px solid transparent',
+                          '&:hover': {
+                            bgcolor: 'rgba(100, 255, 218, 0.1)',
+                          }
+                        }}
                       >
-                        View Project
+                        Live Demo
                       </Button>
                     </CardActions>
                   </Card>

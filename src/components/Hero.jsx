@@ -107,8 +107,14 @@ const Hero = () => {
                   color: 'primary.main',
                   textDecoration: 'none',
                   borderRadius: 1,
+                  transition: 'all 0.2s ease',
                   '&:hover': {
                     bgcolor: 'rgba(100, 255, 218, 0.1)',
+                    boxShadow: '0 0 15px rgba(100, 255, 218, 0.3)',
+                  },
+                  '&:active': {
+                    bgcolor: 'rgba(100, 255, 218, 0.25)',
+                    boxShadow: 'inset 0 4px 8px rgba(0,0,0,0.5)',
                   },
                 }}
               >

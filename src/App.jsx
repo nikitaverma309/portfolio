@@ -2,6 +2,7 @@ import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box } from '@mui/material';
+import AnimatedBackground from './components/AnimatedBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -39,10 +40,11 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <AnimatedBackground />
       <CssBaseline />
-      <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
+      <Box sx={{ minHeight: '100vh', bgcolor: 'transparent', position: 'relative', overflowX: 'clip' }}>
         <Navbar />
-        <Box component="main" sx={{ pt: 8 }}>
+        <Box component="main" sx={{ pt: 8, position: 'relative', zIndex: 1 }}>
           <Hero />
           <About />
           <Experience />
